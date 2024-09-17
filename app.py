@@ -4,7 +4,7 @@ import time
 
 
 client = OpenAI(
-    api_key="sk-KaBn9NWnh0sJXIIX1KPx8WP8b7fsyKZGdq6IWl18DGT3BlbkFJendov-4GMG-jtynOI7cGTfbUdpZUD4LFw-HLrCiFYA"
+    api_key=st.secrets["OPENAI_API_KEY"]
 )
 
 @st.cache_data
