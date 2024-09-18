@@ -45,7 +45,7 @@ assistant_id = st.query_params.get("assistant_id")
 title = st.query_params.get("title")
 
 if not assistant_id or not title:
-    st.subheader("¡Crea tu primer bot para empezar a usarlo!")
+    st.subheader("¡Crea tu primer vendedor para empezar a usarlo!")
 else: st.subheader(title)
 
 
