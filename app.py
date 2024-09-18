@@ -45,8 +45,8 @@ assistant_id = st.query_params.get("assistant_id")
 title = st.query_params.get("title")
 
 if not assistant_id or not title:
-    st.title("¡Crea tu primer bot para empezar a usarlo!")
-else: st.title(title)
+    st.subheader("¡Crea tu primer bot para empezar a usarlo!")
+else: st.subheader(title)
 
 
 
@@ -69,8 +69,11 @@ if prompt := st.chat_input("What is up?"):
         content=prompt,
     )
         st.markdown(prompt)
-        
-    response = run_assistant(assistant_id, thread)
+    
+    if not assistant_id or not thread:
+        response = "Personaliza tu chat primero!"
+    else:
+        response = run_assistant(assistant_id, thread)
     # Add user message to chat history
     with st.chat_message("assistant"):
         st.markdown(response)
